@@ -18,3 +18,7 @@ __pycache__/
 
 # IDE settings
 .vscode/
+# Coverage reports
+.coverage
+htmlcov/
+coverage.xml
