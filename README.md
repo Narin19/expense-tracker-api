@@ -57,7 +57,7 @@ python -m pip install -r requirements.txt
 
 ### 4. Configure environment variables
 
-Create a `.env` file in the project root. Add your own PostgreSQL credentials and a strong, randomly generated JWT secret.
+Create a `.env` file in the project root:
 
 ```dotenv
 DATABASE_URL=postgresql://postgres:YOUR_PASSWORD@localhost:5432/expense_tracker
@@ -65,15 +65,15 @@ TEST_DATABASE_URL=postgresql://postgres:YOUR_PASSWORD@localhost:5432/expense_tra
 SECRET_KEY=YOUR_LONG_RANDOM_SECRET
 ```
 
-Replace the example values with your own settings. URL-encode special characters in your PostgreSQL password when necessary.
+Replace the example values with your own credentials and a strong, randomly generated JWT secret. URL-encode special characters in your PostgreSQL password when necessary.
 
 **Security:** Never commit or share your `.env` file. Keep your test database separate from your application database.
 
 ### 5. Initialize the database
 
-Make sure PostgreSQL is running and that the database specified by `DATABASE_URL` already exists.
+Make sure PostgreSQL is running and the database specified by `DATABASE_URL` already exists.
 
-Run the following command from the project root to create the required tables:
+Run this command from the project root:
 
 ```powershell
 python database.py
@@ -91,7 +91,6 @@ python -m uvicorn main:app --reload
 
 Visit [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs) to explore and test the API endpoints.
 
-
 ## Running Tests
 
 Configure `TEST_DATABASE_URL` to point to your separate test database, then run:
@@ -100,7 +99,7 @@ Configure `TEST_DATABASE_URL` to point to your separate test database, then run:
 python -m pytest -v
 ```
 
-The project has **9 automated tests passing** in the current development environment.
+The project currently has **9 automated tests passing** in the development environment.
 
 ## Repository
 
